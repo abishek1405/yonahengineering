@@ -1,0 +1,187 @@
+// Extra content that makes each service page distinct: who it serves, the equipment involved,
+// the standards followed, FAQs, and which portfolio category holds its related projects.
+// Merged into each service in site.js. Standards are the usual design references for the trade —
+// confirm with the client before adding any new ones.
+
+export const serviceDetails = {
+  'sprinkler-systems': {
+    projectCategory: 'Sprinkler',
+    tagline: 'Fire protection engineered to the hazard, approved for the building.',
+    applications: [
+      { icon: 'Warehouse', label: 'Warehouses & logistics parks' },
+      { icon: 'Factory', label: 'Factories & process plants' },
+      { icon: 'Building2', label: 'Commercial buildings' },
+      { icon: 'Hospital', label: 'Hospitals & healthcare' },
+      { icon: 'Building', label: 'High-rise residential' },
+      { icon: 'Server', label: 'Data centres' },
+    ],
+    equipment: [
+      { icon: 'Cog', title: 'Fire pump sets', text: 'Main electric, diesel and jockey pumps with controllers and header piping.' },
+      { icon: 'Gauge', title: 'Alarm & zone valves', text: 'Wet alarm valves and zone control valves with flow and tamper switches.' },
+      { icon: 'Droplets', title: 'Sprinkler heads', text: 'Pendent, upright and sidewall heads selected for the hazard class.' },
+      { icon: 'Waypoints', title: 'Piping & hydrants', text: 'Risers, mains, hydrant valves and hose reels, pressure tested to code.' },
+    ],
+    standards: [
+      { code: 'NFPA 13', label: 'Installation of sprinkler systems' },
+      { code: 'NFPA 20', label: 'Stationary fire pumps' },
+      { code: 'NFPA 25', label: 'Inspection, testing & maintenance' },
+      { code: 'NBC 2016 Part 4', label: 'Fire & life safety (India)' },
+    ],
+    faqs: [
+      ['What types of sprinkler systems do you install?', 'Wet pipe, dry pipe and pre-action systems. Wet systems suit most buildings; dry and pre-action systems are used where pipes could freeze or where accidental discharge must be avoided, such as server rooms and archives.'],
+      ['How often should a sprinkler system be inspected?', 'NFPA 25 sets the schedule — from weekly and monthly checks of valves and gauges to annual flow tests and longer-interval internal inspections. Our maintenance contracts follow these intervals.'],
+      ['Do you help with fire NOC approval?', 'Yes. We prepare the layout drawings, hydraulic calculations and test records needed for the fire department NOC, and support you through the inspection.'],
+      ['Can you upgrade an existing system?', 'Yes. We survey the installation, check its hydraulic capacity against the current hazard and occupancy, then retrofit pumps, piping or heads as needed.'],
+    ],
+  },
+  'hvac-systems': {
+    projectCategory: 'HVAC',
+    tagline: 'Efficient cooling and clean air, designed around the real load.',
+    applications: [
+      { icon: 'Factory', label: 'Manufacturing plants' },
+      { icon: 'Warehouse', label: 'Warehouses' },
+      { icon: 'Building2', label: 'Offices & IT parks' },
+      { icon: 'Hospital', label: 'Hospitals' },
+      { icon: 'Server', label: 'Data centres' },
+      { icon: 'FlaskConical', label: 'Pharma & clean rooms' },
+    ],
+    equipment: [
+      { icon: 'Snowflake', title: 'Chillers & cooling towers', text: 'Air- and water-cooled chillers with pumps, cooling towers and CHW headers.' },
+      { icon: 'Fan', title: 'AHUs & FCUs', text: 'Air handling and fan coil units with filtration and fresh-air control.' },
+      { icon: 'Split', title: 'VRF / VRV systems', text: 'Multi-zone systems for offices and mixed-use buildings.' },
+      { icon: 'MonitorCog', title: 'Ducting & controls', text: 'Fabricated ductwork, insulation and BMS integration.' },
+    ],
+    standards: [
+      { code: 'ASHRAE 62.1', label: 'Ventilation & indoor air quality' },
+      { code: 'ASHRAE 90.1', label: 'Energy efficiency' },
+      { code: 'ECBC', label: 'Energy Conservation Building Code (India)' },
+      { code: 'NBC 2016 Part 8', label: 'Building services (India)' },
+    ],
+    faqs: [
+      ['Which HVAC system is right for my building?', 'It depends on size, load profile and how the space is used. VRF/VRV suits offices and multi-zone buildings, while central chilled-water plants suit large facilities. We recommend a system after a heat-load study.'],
+      ['How can I reduce HVAC running costs?', 'Right-sized efficient equipment, variable-speed drives, good insulation, BMS-based controls and regular maintenance make the biggest difference. We design with ASHRAE 90.1 and ECBC principles in mind.'],
+      ['Do you offer annual maintenance?', 'Yes. Preventive maintenance covers chillers, AHUs, cooling towers, filters, pumps and controls, with service reports after each visit.'],
+      ['How long does an installation take?', 'It depends on scope. A small VRF job can take a few weeks; a central plant takes longer. We share a detailed schedule after the site survey.'],
+    ],
+  },
+  'lighting-power-distribution': {
+    projectCategory: 'Lighting',
+    tagline: 'Bright, efficient spaces with power delivered safely where it is needed.',
+    applications: [
+      { icon: 'Warehouse', label: 'Warehouses & high-bay sheds' },
+      { icon: 'Factory', label: 'Factories' },
+      { icon: 'Building2', label: 'Offices' },
+      { icon: 'Store', label: 'Retail & showrooms' },
+      { icon: 'Car', label: 'Car parks & roads' },
+      { icon: 'Lamp', label: 'Outdoor & yard areas' },
+    ],
+    equipment: [
+      { icon: 'Lightbulb', title: 'LED fixtures', text: 'High-bay, panel, flood and street lights chosen for the task.' },
+      { icon: 'PanelsTopLeft', title: 'Distribution boards', text: 'Power and lighting DBs with protection and metering.' },
+      { icon: 'Cable', title: 'Cable trays & raceways', text: 'Ladder and perforated trays, conduits and raceways.' },
+      { icon: 'Siren', title: 'Emergency lighting', text: 'Exit signs and escape-route lighting with battery backup.' },
+    ],
+    standards: [
+      { code: 'IS 3646', label: 'Interior illumination' },
+      { code: 'NBC 2016 Part 8', label: 'Electrical & lighting services' },
+      { code: 'IS 732', label: 'Electrical wiring installations' },
+      { code: 'CEA 2010', label: 'Electrical safety regulations' },
+    ],
+    faqs: [
+      ['Why switch to LED high-bay lighting?', 'LEDs use far less energy, last much longer and give better light quality than older fittings. In warehouses with long operating hours the savings usually recover the cost quickly.'],
+      ['How do you decide the right lighting level?', 'We set target lux levels for each area based on its use, following IS 3646 and NBC guidance, then verify the layout with lighting calculations.'],
+      ['Do you install emergency lighting?', 'Yes — exit signage and escape-route lighting with battery backup, positioned so occupants can leave safely during a power failure.'],
+      ['Can you upgrade an existing power distribution system?', 'Yes. We survey the present loads, then add or replace distribution boards and re-route cabling with minimal disruption.'],
+    ],
+  },
+  'ht-panel-testing': {
+    projectCategory: 'HT Panel',
+    tagline: 'Every HT system tested, documented and safe before it is energised.',
+    applications: [
+      { icon: 'Zap', label: 'Substations' },
+      { icon: 'Factory', label: 'Industrial plants' },
+      { icon: 'Building2', label: 'Commercial complexes' },
+      { icon: 'Hospital', label: 'Hospitals' },
+      { icon: 'Server', label: 'Data centres' },
+      { icon: 'Warehouse', label: 'Warehousing parks' },
+    ],
+    equipment: [
+      { icon: 'Zap', title: 'HT switchgear', text: 'VCB panels and ring main units — testing and commissioning.' },
+      { icon: 'BatteryCharging', title: 'Transformers', text: 'Power and distribution transformers — ratio, winding and IR tests.' },
+      { icon: 'ShieldCheck', title: 'Protection relays', text: 'Numerical and electromechanical relays — secondary injection.' },
+      { icon: 'Cable', title: 'HT cables', text: 'Cables and terminations — insulation and withstand testing.' },
+    ],
+    standards: [
+      { code: 'IEC 62271', label: 'High-voltage switchgear' },
+      { code: 'IS/IEC 60076', label: 'Power transformers' },
+      { code: 'IEC 60255', label: 'Protection relays' },
+      { code: 'CEA 2010', label: 'Electrical safety regulations' },
+    ],
+    faqs: [
+      ['Why is HT panel testing important?', 'Testing finds insulation weakness, loose connections and relay mis-settings before they cause failures or unsafe conditions. It is essential before first energisation and part of good preventive maintenance.'],
+      ['Which tests do you carry out?', 'Insulation resistance, contact resistance, breaker timing, relay secondary injection, transformer ratio and winding resistance, and HV cable tests — selected to suit the equipment.'],
+      ['How often should HT equipment be tested?', 'Typically once a year as preventive maintenance, before commissioning, and after any major fault — always in line with the manufacturer’s recommendations and applicable regulations.'],
+      ['Do you provide test reports?', 'Yes. You receive a detailed report with measured values, pass/fail results and recommendations for any corrective work.'],
+    ],
+  },
+  'electrical-systems': {
+    projectCategory: 'Electrical',
+    tagline: 'Complete electrical installations, from load study to handover.',
+    applications: [
+      { icon: 'Factory', label: 'Factories' },
+      { icon: 'Warehouse', label: 'Warehouses' },
+      { icon: 'Building2', label: 'Offices & IT parks' },
+      { icon: 'Hospital', label: 'Hospitals' },
+      { icon: 'Server', label: 'Data centres' },
+      { icon: 'House', label: 'Residential projects' },
+    ],
+    equipment: [
+      { icon: 'PanelsTopLeft', title: 'LT panels & MCCs', text: 'Main LV switchboards and motor control centres.' },
+      { icon: 'Gauge', title: 'APFC panels', text: 'Automatic power factor correction to cut losses and penalties.' },
+      { icon: 'CloudLightning', title: 'Earthing & lightning', text: 'Earth pits, grids and lightning protection systems.' },
+      { icon: 'Cable', title: 'Cabling & wiring', text: 'Power and control cabling, glanding and termination.' },
+    ],
+    standards: [
+      { code: 'IS 732', label: 'Electrical wiring installations' },
+      { code: 'IS 3043', label: 'Earthing' },
+      { code: 'IS/IEC 62305', label: 'Lightning protection' },
+      { code: 'CEA 2010', label: 'Electrical safety regulations' },
+    ],
+    faqs: [
+      ['What does an electrical installation project include?', 'Load calculations, single-line diagrams, panels, cabling, earthing, lighting and power points, followed by testing and commissioning.'],
+      ['Do you handle statutory approvals?', 'Yes. We prepare the drawings and documentation needed for electrical inspectorate approval and support the inspection.'],
+      ['Why is proper earthing so important?', 'Earthing gives fault current a safe path, protecting people from electric shock and equipment from damage. We design earthing systems to IS 3043.'],
+      ['Can you work in a running facility?', 'Yes. We plan shutdowns and phase the work to keep downtime to a minimum.'],
+    ],
+  },
+  'plumbing-sanitary': {
+    projectCategory: 'Plumbing',
+    tagline: 'Reliable water supply and drainage, sized for how the building is used.',
+    applications: [
+      { icon: 'House', label: 'Residential buildings' },
+      { icon: 'Building2', label: 'Commercial buildings' },
+      { icon: 'Hospital', label: 'Hospitals' },
+      { icon: 'Hotel', label: 'Hotels & hostels' },
+      { icon: 'Factory', label: 'Factories' },
+      { icon: 'School', label: 'Schools & campuses' },
+    ],
+    equipment: [
+      { icon: 'Cog', title: 'Pumps & hydro-pneumatics', text: 'Transfer, booster and hydro-pneumatic pump systems.' },
+      { icon: 'Container', title: 'Tanks & treatment', text: 'Storage tanks, filtration and water treatment units.' },
+      { icon: 'Waves', title: 'Drainage & sewage', text: 'Soil, waste and storm-water lines with inspection chambers.' },
+      { icon: 'Bath', title: 'Sanitary fixtures', text: 'Fixture supply and installation for washrooms and kitchens.' },
+    ],
+    standards: [
+      { code: 'NBC 2016 Part 9', label: 'Plumbing services (India)' },
+      { code: 'IS 1172', label: 'Water supply requirements' },
+      { code: 'IS 1742', label: 'Building drainage' },
+      { code: 'UPC-I', label: 'Uniform Plumbing Code – India' },
+    ],
+    faqs: [
+      ['Which plumbing services do you cover?', 'Domestic cold and hot water, drainage and sewage, pump rooms, storage tanks, rainwater harvesting and grease traps — from design through installation.'],
+      ['Do you design rainwater harvesting systems?', 'Yes. Rainwater harvesting is required for many buildings in Tamil Nadu, and we design recharge or storage systems to suit the site.'],
+      ['How are pumps and tanks sized?', 'From occupancy, fixture units and storage norms in NBC Part 9, so the system meets peak demand without oversizing.'],
+      ['Do you offer maintenance?', 'Yes — periodic servicing of pumps, tanks and drainage lines to keep the system reliable.'],
+    ],
+  },
+};

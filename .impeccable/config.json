@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-02T13:16:48.175Z",
+        "reason": "Claude decided: Inter is the established body font (paired with Poppins headings) across the whole Yonah site, which the user reviewed and called fine; the flagged line is the existing font link, not a new choice"
+      }
+    ]
+  }
+}

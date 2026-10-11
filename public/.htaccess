@@ -1,0 +1,11 @@
+# Apache / cPanel: every page is a prerendered folder with index.html
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # old page addresses from the previous site
+  RewriteRule ^index\.html$ / [R=301,L]
+  RewriteRule ^(about|services|projects|contact)\.html$ /$1 [R=301,L]
+</IfModule>
