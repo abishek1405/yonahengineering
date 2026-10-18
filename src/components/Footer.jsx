@@ -61,7 +61,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {company.legalName} · CIN {company.cin}. All rights reserved.
         </p>
-        <p>MEP Engineering · Tamil Nadu, India</p>
+        <p>MEP Engineering · All over India</p>
         <button type="button" className="to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           Back to top <ArrowUp size={16} />
         </button>

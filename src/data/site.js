@@ -444,13 +444,17 @@ export const currentProjects = [
   { name: 'Water Booster & Storage — Industrial Campus', location: 'Tamil Nadu', value: '', image: 'plumbing/plumbing-3' },
 ];
 
+// Core values (About page). Concept photos, not project photos: free Unsplash License images
+// (commercial use, no attribution needed) — sources: unsplash.com/photos/_XTY6lD8jgM (trophy),
+// n95VMLxqM2I (handshake), jw3GOzxiSkw (bulb), GmvH5v9l3K4 (gears), 0w-uTa0Xz7w (wind turbines),
+// hard-hats-and-safety-vests-wjHdeYmI-XU (hard hats).
 export const values = [
-  { icon: 'Trophy', title: 'Excellence', text: 'We maintain the highest standards in every project, from design to commissioning.', image: 'sprinkler/sprinkler-1' },
-  { icon: 'Handshake', title: 'Integrity', text: 'Honest, transparent communication and ethical practices in everything we do.', image: 'office/office-2' },
-  { icon: 'Lightbulb', title: 'Innovation', text: 'Embracing the latest technologies to deliver smarter, more efficient solutions.', image: 'lighting/lighting-1' },
-  { icon: 'Zap', title: 'Reliability', text: 'On-time delivery and consistent quality that our clients can always count on.', image: 'electrical/electrical-7' },
-  { icon: 'Leaf', title: 'Sustainability', text: 'Designing energy-efficient systems that reduce environmental impact.', image: 'plumbing/plumbing-9' },
-  { icon: 'ShieldCheck', title: 'Safety', text: 'Zero-compromise approach to workplace safety and system compliance.', image: 'electrical/electrical-9' },
+  { icon: 'Trophy', title: 'Excellence', text: 'We maintain the highest standards in every project, from design to commissioning.', image: 'values/excellence' },
+  { icon: 'Handshake', title: 'Integrity', text: 'Honest, transparent communication and ethical practices in everything we do.', image: 'values/integrity' },
+  { icon: 'Lightbulb', title: 'Innovation', text: 'Embracing the latest technologies to deliver smarter, more efficient solutions.', image: 'values/innovation' },
+  { icon: 'Zap', title: 'Reliability', text: 'On-time delivery and consistent quality that our clients can always count on.', image: 'values/reliability' },
+  { icon: 'Leaf', title: 'Sustainability', text: 'Designing energy-efficient systems that reduce environmental impact.', image: 'values/sustainability' },
+  { icon: 'ShieldCheck', title: 'Safety', text: 'Zero-compromise approach to workplace safety and system compliance.', image: 'values/safety' },
 ];
 
 export const certifications = [

@@ -333,7 +333,7 @@ export default function Home() {
             eyebrow="Watch"
             title="See Our Work"
             accent="On Site"
-            lead="Pump rooms, chiller plants, HT panel testing and more — a quick look at installations delivered by our teams."
+            lead="Pump rooms, chiller plants, HT panel testing and more a quick look at installations delivered by our teams."
           />
           <VideoFeature />
         </div>
