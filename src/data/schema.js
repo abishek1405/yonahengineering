@@ -17,8 +17,9 @@ export function organizationSchema() {
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/og-image.jpg`,
     description:
-      'MEP engineering contractor for fire sprinkler systems, HVAC, lighting & power distribution, HT panel testing, electrical and plumbing works for commercial and industrial projects.',
-    telephone: [company.phone, company.phone2].map((p) => p.replace(/\s/g, '')),
+      'MEP engineering contractor for fire protection, HVAC, electrical & ELV, utility systems, public health engineering (PHE) and water treatment plants for industrial and commercial projects.',
+    telephone: [company.landline, company.phone, company.phone2].map((p) => p.replace(/\s/g, '')),
+    foundingDate: String(company.founded),
     email: company.email,
     address: {
       '@type': 'PostalAddress',
@@ -31,9 +32,9 @@ export function organizationSchema() {
     areaServed: { '@type': 'Country', name: 'India' },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '18:00',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:30',
+      closes: '18:30',
     },
     knowsAbout: services.map((s) => s.name),
     ...(sameAs.length ? { sameAs } : {}),

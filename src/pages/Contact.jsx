@@ -52,11 +52,11 @@ export default function Contact() {
               </li>
               <li>
                 <span className="contact-icon"><Phone size={20} /></span>
-                <div><h3 className="contact-label">Phone Numbers</h3><a href={company.phoneHref}>{company.phone}</a><a href={company.phone2Href}>{company.phone2}</a></div>
+                <div><h3 className="contact-label">Phone Numbers</h3><a href={company.landlineHref}>{company.landline} (Office)</a><a href={company.phoneHref}>{company.phone}</a><a href={company.phone2Href}>{company.phone2}</a></div>
               </li>
               <li>
                 <span className="contact-icon"><Clock size={20} /></span>
-                <div><h3 className="contact-label">Working Hours</h3><span>{company.hours}</span></div>
+                <div><h3 className="contact-label">Office Hours</h3><span>{company.hours}</span></div>
               </li>
             </ScrollStack>
             <div className="contact-services">

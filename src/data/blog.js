@@ -2,7 +2,7 @@
 export const blogAuthor = {
   name: 'Yonah Engineering Technical Team',
   role: 'MEP design, installation & testing engineers',
-  bio: 'A team of engineers who design, install, test and commission fire protection, HVAC, electrical and plumbing systems for industrial and commercial sites across Tamil Nadu. Our articles draw on that site work and on the published standards, and are written to help owners and facility teams ask the right questions.',
+  bio: 'A team of engineers who design, supply, install, test and commission fire protection, HVAC, electrical & ELV, utility and PHE systems for industrial and commercial sites across Tamil Nadu. Our articles draw on that site work and on the published standards, and are written to help owners and facility teams ask the right questions.',
 };
 
 export const posts = [
@@ -11,8 +11,8 @@ export const posts = [
     title: 'Sprinkler System Maintenance: A Practical NFPA 25 Checklist',
     description: 'A practical NFPA 25 sprinkler maintenance checklist for facility managers in India: weekly, quarterly, annual and five-year tasks, records and impairments.',
     excerpt: 'What to inspect, test and maintain on a fire sprinkler system, and how often, explained in plain terms for the people who run the building.',
-    category: 'Sprinkler Systems',
-    serviceSlug: 'sprinkler-systems',
+    category: 'Fire Protection',
+    serviceSlug: 'fire-protection-systems',
     image: 'sprinkler/sprinkler-3',
     date: '2026-08-20',
     readMinutes: 6,
@@ -128,8 +128,8 @@ export const posts = [
     title: 'HT Panel Testing Before Commissioning: The Key Tests Explained',
     description: 'HT panel testing before commissioning explained: insulation resistance, contact resistance, breaker timing, relay injection, CT/PT and cable tests, interlocks.',
     excerpt: 'The pre-commissioning tests that prove an HT panel is safe to energise, what each one checks, and why none of them should be skipped.',
-    category: 'HT Panel Testing',
-    serviceSlug: 'ht-panel-testing',
+    category: 'Electrical & ELV',
+    serviceSlug: 'electrical-elv-systems',
     image: 'ht-panel/ht-panel-1',
     date: '2026-09-03',
     readMinutes: 5,
@@ -349,8 +349,8 @@ export const posts = [
     title: 'Earthing System Design Basics: Why IS 3043 Matters for Industry',
     description: 'Earthing design basics for industrial sites in India: IS 3043, system vs equipment earthing, soil resistivity, earth pit testing and lightning protection.',
     excerpt: 'What earthing actually does, how IS 3043 approaches design, and the earthing mistakes that turn up most often on industrial sites.',
-    category: 'Electrical Systems',
-    serviceSlug: 'electrical-systems',
+    category: 'Electrical & ELV',
+    serviceSlug: 'electrical-elv-systems',
     image: 'electrical/electrical-5',
     date: '2026-09-30',
     readMinutes: 5,

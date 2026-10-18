@@ -8,4 +8,8 @@ ErrorDocument 404 /404.html
   # old page addresses from the previous site
   RewriteRule ^index\.html$ / [R=301,L]
   RewriteRule ^(about|services|projects|contact)\.html$ /$1 [R=301,L]
+  # service pages renamed or merged (October 2026)
+  RewriteRule ^services/sprinkler-systems/?$ /services/fire-protection-systems [R=301,L]
+  RewriteRule ^services/(lighting-power-distribution|ht-panel-testing|electrical-systems)/?$ /services/electrical-elv-systems [R=301,L]
+  RewriteRule ^services/plumbing-sanitary/?$ /services/public-health-engineering [R=301,L]
 </IfModule>

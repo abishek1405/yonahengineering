@@ -4,4 +4,10 @@
 /services.html  /services  301
 /projects.html  /projects  301
 /contact.html   /contact   301
-# Unknown URLs are served dist/404.html with a real 404 status (Netlify default) — no catch-all rewrite.
+# Service pages renamed or merged (October 2026)
+/services/sprinkler-systems            /services/fire-protection-systems    301
+/services/lighting-power-distribution  /services/electrical-elv-systems     301
+/services/ht-panel-testing             /services/electrical-elv-systems     301
+/services/electrical-systems           /services/electrical-elv-systems     301
+/services/plumbing-sanitary            /services/public-health-engineering  301
+# Unknown URLs are served dist/404.html with a real 404 status (Netlify default) - no catch-all rewrite.

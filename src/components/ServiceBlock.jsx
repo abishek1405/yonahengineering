@@ -20,14 +20,19 @@ export default function ServiceBlock({ service: s, flipped = false, alt = false,
           <T className="service-block-title">{s.name}</T>
           <p>{s.description}</p>
           <S className="mini-title">Key Services Include</S>
-          <ul className="feature-list">
-            {s.features.map((f) => (
-              <li key={f.text}>
-                <span className="check"><Check size={14} strokeWidth={3} /></span>
-                {f.text}
-              </li>
-            ))}
-          </ul>
+          {(s.featureGroups || [{ items: s.features }]).map((g, gi) => (
+            <div key={g.title || gi} className="feature-group">
+              {g.title && <p className="feature-group-title">{g.title}</p>}
+              <ul className="feature-list">
+                {g.items.map((f) => (
+                  <li key={f.text}>
+                    <span className="check"><Check size={14} strokeWidth={3} /></span>
+                    {f.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           <div className="btn-row">
             <Link to={`/services/${s.slug}`} className="btn btn-navy">
               View Details <ArrowRight size={18} />

@@ -2,19 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { X, MapPin, Building2, Layers, Check, ChevronLeft, ChevronRight, ArrowRight, Plus } from 'lucide-react';
 import { PageHeader, CtaBand, SectionHead } from '../components/Section.jsx';
-import { projects, projectCategories, services, img, thumb } from '../data/site.js';
+import { projects, projectCategories, categoryService as serviceFor, services, img, thumb } from '../data/site.js';
 import Seo, { breadcrumbSchema } from '../components/Seo.jsx';
 import ScrollStack from '../components/ScrollStack.jsx';
 import { QuoteButton } from '../components/Quote.jsx';
-
-const serviceFor = {
-  Sprinkler: 'sprinkler-systems',
-  HVAC: 'hvac-systems',
-  Lighting: 'lighting-power-distribution',
-  'HT Panel': 'ht-panel-testing',
-  Electrical: 'electrical-systems',
-  Plumbing: 'plumbing-sanitary',
-};
 
 export default function Projects() {
   // ?category=HVAC (used by the service pages' "View all … projects" links) preselects a filter.
@@ -44,7 +35,7 @@ export default function Projects() {
     <>
       <Seo
         title="MEP Projects — Fire, HVAC & Electrical"
-        description="Completed MEP projects by Yonah Engineering: fire pump rooms, chiller plants, cooling towers, HT switchgear testing, LT panels and water treatment."
+        description="Completed MEP projects by Yonah Engineering: fire pump rooms, chiller plants, HT and LT electrical works, cooling water utilities and water treatment."
         path="/projects"
         image={img('sprinkler/sprinkler-1')}
         schema={[breadcrumbSchema([{ label: 'Home', to: '/' }, ...crumbs], '/projects')]}
@@ -54,7 +45,7 @@ export default function Projects() {
         eyebrow="Our Portfolio"
         title="Project"
         accent="Gallery"
-        lead="Explore our portfolio of completed MEP engineering projects across commercial, industrial, and residential sectors across India."
+        lead="Explore our portfolio of completed MEP engineering projects for industrial and commercial clients across India."
         image={img('sprinkler/sprinkler-2')}
       />
 

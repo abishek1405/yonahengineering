@@ -51,7 +51,7 @@ export default function Footer() {
           <ul className="footer-contact">
             <li><MapPin size={18} /><a href={company.mapsUrl} target="_blank" rel="noreferrer">{company.address.join(' ')}</a></li>
             <li><Mail size={18} /><a href={`mailto:${company.email}`}>{company.email}</a></li>
-            <li><Phone size={18} /><span className="footer-phones"><a href={company.phoneHref}>{company.phone}</a><a href={company.phone2Href}>{company.phone2}</a></span></li>
+            <li><Phone size={18} /><span className="footer-phones"><a href={company.landlineHref}>{company.landline}</a><a href={company.phoneHref}>{company.phone}</a><a href={company.phone2Href}>{company.phone2}</a></span></li>
             <li><Clock size={18} /><span>{company.hours}</span></li>
           </ul>
         </div>

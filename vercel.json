@@ -21,6 +21,31 @@
       "source": "/contact.html",
       "destination": "/contact",
       "permanent": true
+    },
+    {
+      "source": "/services/sprinkler-systems",
+      "destination": "/services/fire-protection-systems",
+      "permanent": true
+    },
+    {
+      "source": "/services/lighting-power-distribution",
+      "destination": "/services/electrical-elv-systems",
+      "permanent": true
+    },
+    {
+      "source": "/services/ht-panel-testing",
+      "destination": "/services/electrical-elv-systems",
+      "permanent": true
+    },
+    {
+      "source": "/services/electrical-systems",
+      "destination": "/services/electrical-elv-systems",
+      "permanent": true
+    },
+    {
+      "source": "/services/plumbing-sanitary",
+      "destination": "/services/public-health-engineering",
+      "permanent": true
     }
   ]
 }

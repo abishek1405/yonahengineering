@@ -124,14 +124,19 @@ function ServiceView({ s }) {
         <div className="container sd-body">
           <div className="reveal">
             <h2 className="underlined">Key Services Include</h2>
-            <ul className="sd-features">
-              {s.features.map((f) => (
-                <li key={f.text}>
-                  <span className="sd-feature-icon"><Icon name={f.icon} size={22} /></span>
-                  {f.text}
-                </li>
-              ))}
-            </ul>
+            {(s.featureGroups || [{ items: s.features }]).map((g, gi) => (
+              <div key={g.title || gi} className="feature-group">
+                {g.title && <p className="feature-group-title">{g.title}</p>}
+                <ul className="sd-features">
+                  {g.items.map((f) => (
+                    <li key={f.text}>
+                      <span className="sd-feature-icon"><Icon name={f.icon} size={22} /></span>
+                      {f.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
           <aside className="sd-support reveal">
             <div className="sd-support-media">

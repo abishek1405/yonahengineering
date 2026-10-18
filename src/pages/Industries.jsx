@@ -15,7 +15,7 @@ export default function Industries() {
     <>
       <Seo
         title="Industries We Serve — MEP Engineering"
-        description="MEP engineering for warehouses, factories, IT parks, hospitals, data centres, pharma, residential and institutional buildings across Tamil Nadu and India."
+        description="MEP engineering for warehouses, factories, IT parks, hospitals, data centres, pharma plants, hotels and hospitality across Tamil Nadu and India."
         path="/industries"
         image={img('hvac/hvac-8')}
         schema={[
@@ -83,7 +83,7 @@ export default function Industries() {
             eyebrow="One Accountable Team"
             title="Every Discipline,"
             accent="One Contractor"
-            lead="Fire protection, HVAC, electrical, HT testing and plumbing are engineered and installed by the same team, so services are coordinated on site instead of clashing."
+            lead="Fire protection, HVAC, electrical & ELV, utilities, PHE and water treatment are engineered and installed by the same team, so services are coordinated on site instead of clashing."
           />
           <p className="more-links reveal">
             <Link to="/services">Explore our services</Link> · <Link to="/products">See the products &amp; systems we supply</Link> ·{' '}

@@ -16,7 +16,7 @@ export default function Products() {
     <>
       <Seo
         title="Products & Systems — MEP Equipment"
-        description="Fire pumps and sprinklers, chillers, AHUs and VRF, LED lighting, HT switchgear, LT panels and plumbing equipment, supplied, installed and tested."
+        description="Fire protection, HVAC, utility, HT/LT electrical, ELV, PHE and water treatment equipment, supplied, installed and tested by Yonah Engineering."
         path="/products"
         image={img('electrical/electrical-1')}
         schema={[
@@ -47,12 +47,12 @@ export default function Products() {
       {productGroups.map((g, gi) => (
         <section key={g.id} className={`section${gi % 2 ? ' section-alt' : ''}`}>
           <div className="container">
-            <SectionHead eyebrow={gi === 0 ? 'Mechanical' : 'Electrical'} title={g.title} lead={g.intro} />
+            <SectionHead eyebrow={g.eyebrow} title={g.title} lead={g.intro} />
             <div className="product-cats">
               {g.categories.map((c) => {
                 const sv = serviceBySlug[c.service];
                 return (
-                  <article key={c.service} id={c.service} className="product-cat reveal">
+                  <article key={c.id} id={c.id} className="product-cat reveal">
                     <header className="product-cat-head">
                       <span className="sd-equip-icon"><Icon name={c.icon} size={24} /></span>
                       <div>

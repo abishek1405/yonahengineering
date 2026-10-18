@@ -7,13 +7,19 @@ import Seo, { breadcrumbSchema } from '../components/Seo.jsx';
 import ScrollStack from '../components/ScrollStack.jsx';
 import MapSection from '../components/MapSection.jsx';
 
+// "Our Journey" chart: years run up the vertical axis, each milestone is a stem that rises to its year.
+const FIRST_YEAR = 2015;
+const LAST_YEAR = 2024;
+const YEARS = Array.from({ length: LAST_YEAR - FIRST_YEAR + 1 }, (_, i) => LAST_YEAR - i);
+const heightFor = (year) => `${((year - FIRST_YEAR) / (LAST_YEAR - FIRST_YEAR)) * 100}%`;
+
 export default function About() {
   const crumbs = [{ label: 'About Us', to: '/about' }];
   return (
     <>
       <Seo
         title="About Us — MEP Engineers in Tamil Nadu"
-        description="Meet Yonah Engineering: MEP engineers for fire protection, HVAC, electrical, HT testing and plumbing projects. Our story, values, credentials and team."
+        description="Meet Yonah Engineering: MEP engineers for fire protection, HVAC, electrical & ELV, utilities, PHE and water treatment. Our story, credentials and team."
         path="/about"
         schema={[breadcrumbSchema([{ label: 'Home', to: '/' }, ...crumbs], '/about')]}
       />
@@ -22,38 +28,39 @@ export default function About() {
         eyebrow="Who We Are"
         title="About Yonah"
         accent="Engineering"
-        lead="A trusted MEP engineering partner for over 15 years, delivering innovative and reliable solutions for commercial and industrial projects across India."
-        image={img('site/site-1')}
+        lead="A trusted MEP engineering partner for over 11 years, delivering innovative and reliable solutions for industrial and commercial projects across India."
+        image={img('office/office-3')}
       />
 
       {/* STORY */}
       <section className="section">
         <div className="container story">
           <div className="story-media reveal">
-            <img src={thumb('office/office-1')} alt="Entrance of the Yonah Engineering and Construction office" loading="lazy" />
+            <img src={thumb('site/site-4')} alt="Yonah Engineering team on a fire pump room walk-through" loading="lazy" />
             <div className="story-badge">
-              <strong>200+</strong>
+              <strong>75+</strong>
               <span>Projects Delivered</span>
             </div>
           </div>
           <div className="reveal">
             <p className="eyebrow">Our Story</p>
             <h2>
-              15+ Years of Engineering <span className="accent">Excellence</span>
+              11+ Years of Engineering <span className="accent">Excellence</span>
             </h2>
             <p>
-              Founded in 2009, Yonah Engineering has grown from a small mechanical engineering firm into a
+              Founded in {company.founded}, Yonah Engineering has grown from a small mechanical engineering firm into a
               comprehensive MEP solutions provider trusted by leading developers, contractors, and facility managers
               across India.
             </p>
             <p>
               Our journey began with a commitment to delivering engineering solutions that combine technical
               excellence with practical innovation. Today, with a team of over 50 certified engineers and
-              technicians, we handle projects ranging from small commercial fit-outs to large-scale industrial MEP
+              technicians, we handle projects ranging from commercial fit-outs to large-scale industrial MEP
               installations.
             </p>
             <p>
-              Our work follows ISO 9001:2015 quality processes and is engineered to NFPA and ASHRAE standards  ensuring every system we install meets the strictest safety and quality standards.
+              Our work follows ISO 9001:2015 quality processes and is engineered to meet national and international
+              standards, ensuring every system we install meets the strictest safety and quality requirements.
             </p>
             <dl className="company-facts">
               <div>
@@ -69,9 +76,11 @@ export default function About() {
                 <dd>{company.address.join(' ')}</dd>
               </div>
               <div>
-                <dt>Talk to an engineer</dt>
+                <dt>Talk to our executives</dt>
                 <dd>
-                  <a href={company.phoneHref}>{company.phone}</a> · <a href={`mailto:${company.email}`}>{company.email}</a>
+                  <a href={company.landlineHref}>{company.landline}</a> · <a href={company.phoneHref}>{company.phone}</a>
+                  <br />
+                  <a href={`mailto:${company.email}`}>{company.email}</a>
                 </dd>
               </div>
             </dl>
@@ -104,7 +113,7 @@ export default function About() {
               <h3>Our Vision</h3>
             </div>
             <p>
-              To be the most trusted and innovative MEP engineering company in India  recognized for our
+              To be the most trusted and innovative MEP engineering company in India, recognized for our
               technical expertise, commitment to quality, and the long-lasting impact we create through every project
               we undertake.
             </p>
@@ -119,7 +128,7 @@ export default function About() {
             eyebrow="What Drives Us"
             title="Our Core"
             accent="Values"
-            lead="These values guide everything we do  from design to installation  and help us build safer, smarter and more reliable systems."
+            lead="These values guide everything we do, from design to installation, and help us build safer, smarter and more reliable systems."
           />
           <ScrollStack className="values-grid">
             {values.map((v, i) => (
@@ -155,8 +164,8 @@ export default function About() {
             as="h3"
             eyebrow="Our Credentials"
             title="Certifications &"
-            accent="Approvals"
-            lead="Certified to internationally recognised quality and engineering standards."
+            accent="Licences"
+            lead="Certified and licensed to recognised quality, electrical and engineering standards."
           />
           <ScrollStack className="cert-grid">
             {certifications.map((c) => (
@@ -172,35 +181,48 @@ export default function About() {
         </div>
       </section>
 
-      {/* MILESTONES */}
+      {/* OUR JOURNEY — milestone graph */}
       <section className="section">
         <div className="container">
           <SectionHead
             eyebrow="Our Journey"
-            title="Company"
-            accent="Milestones"
+            title="Growing Since"
+            accent={String(FIRST_YEAR)}
             lead="Key moments that have shaped our growth and strengthened our commitment to safer, smarter engineering."
           />
-          <ScrollStack as="ol" className="timeline">
-            {milestones.map((m, i) => (
-              <li key={m.year} className={`tl-item reveal${i % 2 ? ' is-right' : ''}`}>
-                <span className="tl-dot" aria-hidden="true" />
-                <article className="tl-card">
-                  <div className="tl-copy">
-                    <span className="tl-year">{m.year}</span>
-                    <div className="tl-head">
-                      <span className="tl-icon"><Icon name={m.icon} size={20} /></span>
-                      <h4>{m.title}</h4>
-                    </div>
-                    <p>{m.text}</p>
+          <div className="journey reveal" style={{ '--cols': milestones.length }}>
+            {/* the chart is a picture of the list below, which carries the same content as text */}
+            <div className="journey-chart" aria-hidden="true">
+              <div className="journey-axis">
+                {YEARS.map((y) => (
+                  <span key={y}>{y}</span>
+                ))}
+              </div>
+              <div className="journey-plot">
+                {milestones.map((m) => (
+                  <div key={m.year} className="journey-col">
+                    <span className="journey-stem" style={{ '--h': heightFor(m.year) }}>
+                      <span className="journey-dot" />
+                      <span className="journey-tip">
+                        {m.year} · {m.title}
+                      </span>
+                    </span>
+                    <span className="journey-xlabel">{m.year}</span>
                   </div>
-                  <div className="tl-media">
-                    <img src={thumb(m.image)} alt="" aria-hidden="true" loading="lazy" />
-                  </div>
-                </article>
-              </li>
-            ))}
-          </ScrollStack>
+                ))}
+              </div>
+            </div>
+            <ol className="journey-list">
+              {milestones.map((m) => (
+                <li key={m.year} className="journey-item">
+                  <span className="journey-year">{m.year}</span>
+                  <span className="journey-icon"><Icon name={m.icon} size={18} /></span>
+                  <h4>{m.title}</h4>
+                  <p>{m.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 

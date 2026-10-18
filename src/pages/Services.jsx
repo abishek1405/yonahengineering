@@ -11,7 +11,7 @@ export default function Services() {
     <>
       <Seo
         title="MEP Engineering Services"
-        description="Fire sprinkler, HVAC, lighting & power distribution, HT panel testing, electrical and plumbing services, designed, installed and maintained by our team."
+        description="Fire protection, HVAC, electrical & ELV, utility systems, public health engineering and water treatment plants, designed, supplied and installed."
         path="/services"
         schema={[
           breadcrumbSchema([{ label: 'Home', to: '/' }, ...crumbs], '/services'),
@@ -52,7 +52,7 @@ export default function Services() {
             eyebrow="Six Disciplines, One Team"
             title="Engineering Services"
             accent="We Deliver"
-            lead="Each service is handled end to end by our own engineers — survey, design, approvals, installation, testing and maintenance — so one team stays accountable for your system."
+            lead="Each service is handled end to end by our own engineers — survey, design, approvals, supply and installation, through to testing and commissioning — so one team stays accountable for your system."
           />
           <p className="more-links reveal">
             Need specific equipment? <Link to="/products">See the products &amp; systems we supply</Link>. Planning for a

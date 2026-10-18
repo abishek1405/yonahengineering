@@ -7,7 +7,7 @@ const empty = { name: '', email: '', phone: '', service: '', message: '' };
 // Enquiry form shared by the Contact page and the quote popup.
 // No backend on this site: the enquiry opens in the visitor's email app, pre-filled.
 // Swap the mailto in onSubmit for a form service (Formspree, EmailJS, or an API endpoint) when available.
-export default function QuoteForm({ initialService = '', heading, subheading, submitLabel = 'Send Message', onDone }) {
+export default function QuoteForm({ initialService = '', heading, subheading, submitLabel = 'Send Message', onDone, compact = false }) {
   const uid = useId();
   const fid = (k) => `${uid}-f-${k}`;
   const eid = (k) => `${uid}-e-${k}`;
@@ -108,9 +108,9 @@ export default function QuoteForm({ initialService = '', heading, subheading, su
         </Field>
       </div>
       <Field htmlFor={fid('message')} errorId={eid('message')} label="Project Details" required error={errors.message}>
-        <textarea {...field('message')} rows={4} placeholder="Tell us about your project — location, building type, scope and timeline." />
+        <textarea {...field('message')} rows={compact ? 3 : 4} placeholder="Tell us about your project — location, building type, scope and timeline." />
       </Field>
-      <button type="submit" className="btn btn-primary btn-lg btn-block">
+      <button type="submit" className={`btn btn-primary btn-block${compact ? '' : ' btn-lg'}`}>
         {submitLabel} <Send size={18} />
       </button>
     </form>

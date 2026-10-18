@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, MapPin, ShieldCheck, BadgeCheck, Award } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, MapPin, ShieldCheck, BadgeCheck, Award, X, Info } from 'lucide-react';
 import Icon from '../components/Icon.jsx';
 import { SectionHead, CtaBand } from '../components/Section.jsx';
 import { stats, services, featuredProjects, certifications, workflow, featuredVideo, img, thumb } from '../data/site.js';
@@ -50,7 +50,7 @@ function Counter({ value, suffix }) {
 // About-preview highlights, each with an icon that matches what it stands for.
 const ABOUT_POINTS = [
   { icon: 'Award', label: 'ISO Certified' },
-  { icon: 'HardHat', label: 'Certified Engineers' },
+  { icon: 'BadgeCheck', label: 'A-Grade Electrical Licence' },
   { icon: 'Flame', label: 'NFPA Compliant' },
   { icon: 'Snowflake', label: 'ASHRAE Standards' },
 ];
@@ -114,11 +114,13 @@ const HERO_WORDS = [
 ];
 
 export default function Home() {
+  // the banner card can be closed to show the photos; a small button brings it back
+  const [cardOpen, setCardOpen] = useState(true);
   return (
     <>
       <Seo
         title="Yonah Engineering | MEP Contractor in Tamil Nadu, India"
-        description="MEP contractor in Tamil Nadu: fire sprinkler, HVAC, electrical, HT panel testing and plumbing systems designed, installed and maintained for industry."
+        description="MEP contractor in Tamil Nadu: fire protection, HVAC, electrical & ELV, utility, PHE and water treatment systems designed, supplied and installed."
         path="/"
         schema={[
           {
@@ -140,11 +142,14 @@ export default function Home() {
       <section className="hero">
         <HeroSlides />
         <div className="container hero-inner">
-          <div className="hero-card">
+          <div className={`hero-card${cardOpen ? '' : ' is-closed'}`} aria-hidden={cardOpen ? undefined : true}>
+            <button type="button" className="hero-card-close" onClick={() => setCardOpen(false)} aria-label="Close banner and view photos" tabIndex={cardOpen ? undefined : -1}>
+              <X size={18} />
+            </button>
             <p className="hero-eyebrow page-pill">
               <span className="dot" />
               <span>
-                <span className="hide-sm">Expert </span>MEP Engineering · Tamil Nadu, India
+                <span className="hide-sm">Expert </span>MEP Engineering · All over India
               </span>
             </p>
             <h1 aria-label="Engineering Excellence for Every Project">
@@ -159,8 +164,8 @@ export default function Home() {
               ))}
             </h1>
             <p className="hero-lead">
-              World-class MEP solutions  from fire suppression to HVAC, power distribution and electrical
-              systems  for commercial and industrial projects across India.
+              World-class MEP (Mechanical, Electrical, Plumbing &amp; Fire Protection) solutions for industrial &amp;
+              commercial sectors across India.
             </p>
             <div className="hero-actions">
               <QuoteButton className="btn btn-primary btn-lg">
@@ -176,6 +181,11 @@ export default function Home() {
               <li><Award size={18} /> ISO 9001:2015</li>
             </ul>
           </div>
+          {!cardOpen && (
+            <button type="button" className="hero-card-reopen" onClick={() => setCardOpen(true)}>
+              <Info size={16} /> Show details
+            </button>
+          )}
         </div>
       </section>
 
@@ -203,7 +213,7 @@ export default function Home() {
             <img className="about-media-main" src={thumb('ht-panel/ht-panel-3')} alt="Yonah engineers testing HT switchgear on site" loading="lazy" />
             <img className="about-media-sub" src={thumb('hvac/hvac-9')} alt="Condenser water pump sets and piping installed on a rooftop" loading="lazy" />
             <div className="about-badge">
-              <strong>15+</strong>
+              <strong>11+</strong>
               <span>Years of engineering excellence</span>
             </div>
           </div>
@@ -213,14 +223,14 @@ export default function Home() {
               Building the Infrastructure of <span className="accent">Tomorrow</span>
             </h2>
             <p>
-              Yonah Engineering is a leading MEP (Mechanical, Electrical, and Plumbing) engineering firm based in
-              Sriperumbudur, Tamil Nadu, India. With over 15 years of experience, we have delivered hundreds of successful projects across
-              commercial, industrial, and residential sectors.
+              Yonah Engineering is a leading MEP (Mechanical, Electrical, Plumbing and Fire Protection) engineering firm
+              based in Sriperumbudur, Tamil Nadu, India. With over 11 years of experience, we have delivered 75+ projects
+              for industrial and commercial clients across India.
             </p>
             <p>
-              Our team of certified engineers brings expertise in fire suppression, HVAC design, power distribution,
-              high-tension panel testing, and plumbing systems  ensuring every project meets the highest
-              international standards.
+              Our team of certified engineers brings expertise in fire protection, HVAC, electrical and ELV systems,
+              plant utilities, public health engineering and water treatment, ensuring every project meets national
+              and international standards.
             </p>
             <ul className="check-grid">
               {ABOUT_POINTS.map((c) => (

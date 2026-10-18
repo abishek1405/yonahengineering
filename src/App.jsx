@@ -20,6 +20,15 @@ import { useReveal } from './components/useReveal.js';
 import { QuoteProvider } from './components/Quote.jsx';
 import ScrollExtras from './components/ScrollExtras.jsx';
 
+// old service slug → new one (same list as public/_redirects, public/.htaccess and vercel.json)
+const OLD_SERVICE_URLS = {
+  'sprinkler-systems': 'fire-protection-systems',
+  'lighting-power-distribution': 'electrical-elv-systems',
+  'ht-panel-testing': 'electrical-elv-systems',
+  'electrical-systems': 'electrical-elv-systems',
+  'plumbing-sanitary': 'public-health-engineering',
+};
+
 export default function App() {
   const { pathname } = useLocation();
   useReveal(pathname);
@@ -70,6 +79,10 @@ export default function App() {
           <Route path="/projects.html" element={<Navigate to="/projects" replace />} />
           <Route path="/about.html" element={<Navigate to="/about" replace />} />
           <Route path="/contact.html" element={<Navigate to="/contact" replace />} />
+          {/* Service pages renamed or merged in the October 2026 restructure */}
+          {Object.entries(OLD_SERVICE_URLS).map(([from, to]) => (
+            <Route key={from} path={`/services/${from}`} element={<Navigate to={`/services/${to}`} replace />} />
+          ))}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
